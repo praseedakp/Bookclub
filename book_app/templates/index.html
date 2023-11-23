@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <script src="https://kit.fontawesome.com/a42570f4e1.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>frontpage</title>
+    <style>
+    body{
+    background-color:#f0f5f5;
+
+    }
+    .navbar{
+    background-color:#bf8040;
+    }
+         .nav-link{
+    font-size:20px;
+    font-family:cursive;
+    color:white;
+
+    }
+    .collapse .navbar-nav .nav-item .nav-link{
+    color:yellow;
+    }
+     .carousel-item img{
+    height:550px;
+
+    }
+    .first{
+    height:700px;
+    width:90%;
+    }
+    .first img{
+    height:700px;
+    width:95%;
+    margin-left:100px;
+    }
+    .second{
+    height:200px;
+    width:90%;
+    background-color:#604020;
+    border:2px solid palegreen;
+    border-radius:40px;
+    margin-left:70px;
+    margin-top:100px;
+
+    }
+    .second p{
+    text-align:justify;
+    color:white;
+    font-size:26px;
+    padding:29px;
+    }
+
+    h1{
+    text-align:center;
+    }
+    .footer{
+            padding:50px 15px 10px;
+            border-top:6px solid #bf8040;
+            color:red;
+        }
+        .footer h2{
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 30px;
+
+        }
+        .footer .col{
+            flex-basis:25%;
+            flex-grow: 1;
+            margin-bottom: 20px;
+
+        }
+        .footer .col a{
+            display:block;
+            text-decoration: none;
+            color:red;
+            font-size:14px;
+            margin-bottom:10px;
+
+        }
+        .footer .row{
+            align-items: flex-start;
+            padding:10px 0;
+
+
+        }
+        .footer .language-btn{
+            color:red;
+            padding:10px 20px;
+            border-radius:3px;
+        }
+        .copyright-txt{
+            font-size:14px;
+            margin-top:20px;
+            margin-bottom:10px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="http://127.0.0.1:8000/book_app/indexpage/" style="color:white;"><b><i class="fa-solid fa-book"></i> Book Club</b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/book_app/homepage/">Home</a>
+        </li>
+
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/book_app/regpage/">Register</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/book_app/login/">Login</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/book_app/about/">About Us</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/book_app/contactus/">Contact Us</a>
+        </li>
+
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<!--images-->
+<div class="booky">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'bookbg1.jpg' %}" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'bookbg6.jpg' %}" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'bookbg3.jpg' %}" class="d-block w-100">
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="first">
+    <h1>Best Collections</h1>
+   <img src="{% static 'typebook4.jpg' %}">
+
+</div>
+<div class="second">
+    <p>Books are our best friends and the best way to know about the world. Reading books helps us change our perspective of the world.
+        We have listened to a lot of stories from our elders, but with time, most of our families became limited to only a father, a mother and a child. Gone are those days when grandparents used to sleep beside their grandchildren and narrate bedtime stories.
+        Now it is all about books and online stories.</p>
+
+</div>
+
+<hr>
+<div class="footer">
+        <h2>Questions? call 000-000-000-000</h2>
+
+        <div class="row">
+            <div class="col">
+                <h2 style="color:#604020;">Connect with the Book Club.Adventure awaits in these classic books online.</h2>
+
+
+            </div>
+
+            <div class="col">
+                <h2 style="text-decoration:underline;color:#604020;"><b>Discover</b></h2>
+                 <a href="http://127.0.0.1:8000/book_app/homepage/">Home</a>
+                <a href="http://127.0.0.1:8000/book_app/about/">About</a>
+                <a href="http://127.0.0.1:8000/book_app/contactus/">Contact Us</a>
+
+
+            </div>
+
+            <div class="col">
+                <h2 style="text-decoration:underline;color:#604020;"><b>Develop</b></h2>
+                 <a href="http://127.0.0.1:8000/book_app/regpage/">Register</a>
+                <a href="http://127.0.0.1:8000/book_app/login/">Login</a>
+
+            </div>
+
+            <div class="col">
+                <h2 style="text-decoration:underline;color:#604020;"><b>Help</b></h2>
+                 <a href="http://127.0.0.1:8000/book_app/contactus/">Email:bookclub@infogmail.com</a>
+                <a href="http://127.0.0.1:8000/book_app/contactus/"><i class="fa-brands fa-facebook fa-3x"></i> </a>
+                <a href="http://127.0.0.1:8000/book_app/contactus/"><i class="fa-brands fa-instagram fa-3x"></i></a>
+
+            </div>
+
+        </div>
+        <button class="language-btn">English<i class="fa-solid fa-book"></i></button>
+
+        <p class="copyright-txt">Book Club</p>
+    </div>
+</body>
+</html>

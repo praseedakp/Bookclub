@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+  <script src="https://kit.fontawesome.com/a42570f4e1.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Audio Details</title>
+    <style>
+         body{
+    background-color:#f0f5f5;
+    }
+    h2{
+    text-align:center;
+    color:crimson;
+    }
+    h3{
+    color:red;
+    text-align:center;
+    }
+    p{
+    color:white;
+    font-family:cursive;
+    font-size:20px;
+    text-align:justify;
+    }
+    .au{
+    height:500px;
+    width:800px;
+    margin-left:240px;
+    margin-top:46px;
+    border:2px solid dimgrey;
+    background:dimgrey;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+    h1{
+    text-align:center;
+    color:red;
+    margin-top:10px;
+    }
+
+
+    </style>
+</head>
+<body>
+<h2>AUDIO DETAILS FOR YOU</h2>
+<div class="container">
+    <div class="au">
+
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+  <h1><audio controls>
+    <source src="{% static img %}">
+  </audio></h1>
+  <h3>{{nm}}</h3>
+  <p>{{ab}}</p>
+
+</form>
+ </div>
+</div>
+</body>
+</html>

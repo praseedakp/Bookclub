@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/a42570f4e1.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    *{
+        padding:0px;
+        margin:0px;
+        box:border-box;
+        }
+        body{
+        background-color: #4158D0;
+background-image: linear-gradient(43deg, #4158D0 0%, #31082e 30%, #383948 66%, #100202 100%);
+                }
+                h1{
+                text-align:center;
+                color:white;
+                }
+
+        .first{
+        height:500px;
+        width:500px;
+        background-color: #FFDEE9;
+background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #1da9b3 100%);
+        font-size:20px;
+        margin-top:100px;
+        margin-left:40px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        .first table{
+        margin-left:10px;
+        }
+         input[type="text"]
+        {
+        width:250px;
+        height:30px;
+        margin-top:10px;
+        border:3px solid black;
+        }
+
+         input[type="file"]
+        {
+        width:250px;
+        height:30px;
+        margin-top:10px;
+        border:3px solid black;
+        }
+
+         input[type="submit"]{
+        height:30px;
+        width:160px;
+        margin-top:10px;
+        border:3px solid black;
+        background-color: #08AEEA;
+background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 33%, #d4d622 66%, #7ca5da 100%);
+        font-size:20px;
+
+        }
+        .second{
+        height:1060px;
+        width:900px;
+        background-color: #FFDEE9;
+background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 50%, #1da9b3 100%);
+        font-size:20px;
+        margin-left:560px;
+        margin-top:-600px
+
+        }
+        .second table{
+        margin-left:40px;
+        text-align:center;
+        }
+        td{
+        color:#800000;
+        }
+        .fa-solid{
+        color:brown;
+        padding:15px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>{{a1.id}}</h1>
+<div class="first">
+    <h1>Add Book</h1>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        <table>
+            <tr>
+                <th><label>Book Name</label></th>
+                <td><input type="text" name="bookna" placeholder="Bookname"></td>
+            </tr>
+            <tr>
+                <th><label>Author</label></th>
+                <td><input type="text" name="bookau" placeholder="Author"></td>
+            </tr>
+            <tr>
+                <th><label>Book Pdf</label></th>
+                <td><input type="file" name="bookpdf" placeholder="Bookpdf"></td>
+            </tr>
+            <tr>
+                <th><label>Book Image</label></th>
+                <td><input type="file" name="bookimage" placeholder="Bookimage"></td>
+            </tr>
+            <td><input type="submit" value="Add Book"></td>
+        </table>
+</form>
+</div>
+<!--second div-->
+<div class="second">
+    <h1>Book Details</h1>
+    <table border="2px">
+    <tr>
+        <th>Sl.No</th>
+        <th>BookName</th>
+        <th>AuthorName</th>
+        <th>BookPdf</th>
+        <th>BookImage</th>
+        <th>Date</th>
+<!--        <th>Delete</th>-->
+        <th>Detail</th>
+<!--        <th>Edit</th>-->
+    </tr>
+<!--    for loop-->
+    {% for i,j,k,l,m,n in a %}
+    <tr>
+        <b><td>{{n}}</td></b>
+        <b><td>{{i}}</td></b>
+        <td>{{j}}</td>
+        <td><img src="{% static k %}" height="70px;" width="70px;"></td>
+        <td><a href="{% static l %}" download>Bookpdf</a></td>
+        <b><td>{{m}}</td></b>
+<!--        <td><a href=""><i class="fa-solid fa-trash"></i></a></td>-->
+        <td><a href="http://127.0.0.1:8000/book_app/bookprofiledetails/{{n}}"><i class="fa-solid fa-book"></i></a></td>
+<!--        <td><a href=""><i class="fa-solid fa-pen-to-square"></i></a></td>-->
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+
+<div>
+
+</div>
+</body>
+</html>

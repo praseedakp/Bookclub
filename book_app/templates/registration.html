@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <style>
+        *{
+        padding:0px;
+        margin:0px;
+        box:border-box;
+        }
+        body{
+        background-image:url({% static 'bookbg8.jpg' %});
+        background-repeat:no-repeat;
+        background-size:cover;
+                }
+
+        .reg{
+        height:500px;
+        width:570px;
+        background-color:white;
+        margin-top:40px;
+        border:1px solid black;
+        margin-left:860px;
+
+        }
+        h1{
+        text-align:center;
+        margin-top:70px;
+        color:blue;
+        }
+        input[type="text"]
+        {
+        width:250px;
+        height:30px;
+        margin-top:10px;
+        border:3px solid black;
+        margin-left:-90px;
+
+        }
+        input[type="email"]{
+         width:250px;
+        height:30px;
+        margin-top:10px;
+        border:3px solid black;
+        margin-left:-90px;
+        }
+        input[type="password"]{
+        width:250px;
+        height:30px;
+        margin-top:10px;
+        border:3px solid black;
+        margin-left:-90px;
+        }
+        input[type="submit"]{
+         width:250px;
+        height:30px;
+        margin-left:100px;
+        margin-top:10px;
+        border:3px solid black;
+        background-color: #3EECAC;
+background-image: linear-gradient(19deg, #3EECAC 0%, #EE74E1 100%);
+font-size:20px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="reg">
+
+<form method="post">{% csrf_token %}
+    <table>
+        <h1>REGISTRATION</h1>
+        <tr>
+            <th><label>Username</label></th>
+            <td><input type="text" name="uname" placeholder="Username"></td>
+
+        </tr>
+        <tr>
+            <th><label>Email</label></th>
+            <td><input type="email" name="email" placeholder="Example@gmail.com"></td>
+        </tr>
+
+        <tr>
+            <th><label>Password</label></th>
+            <td><input type="password" name="psw" placeholder="Password"></td>
+        </tr>
+
+        <tr>
+            <th><label>Confirm Password</label></th>
+            <td><input type="password" name="cpsw" placeholder="Confirm Password"></td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="REGISTER"></td>
+        </tr>
+
+    </table>
+</form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <script>
+function myFunction(){
+  // Declare variables
+  var input,filter,ul,li,a,i,txtValue;
+  input=document.getElementById('myInput');
+  filter=input.value.toUpperCase();
+  ul=document.getElementById("myUL");
+  li=ul.getElementsByTagName('div');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i=0;i<li.length;i++) {
+    a=li[i].getElementsByTagName("h5")[0];
+    txtValue=a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter)>-1) {
+      li[i].style.display="";
+    }
+    else {
+      li[i].style.display="none";
+    }
+  }
+}
+
+</script>
+    <script src="https://kit.fontawesome.com/a42570f4e1.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>User profile display</title>
+    <style>
+
+        body{
+    background-color:#f0f5f5;
+    }
+    .card{
+    height:450px;
+    width:680px;
+    margin-top:10px;
+    margin-left:290px;
+    border:2px solid lightgrey;
+    border-radius:200px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+    .card-title{
+    text-align:center;
+    }
+    .card-subtitle{
+    text-align:center;
+    }
+    .card-text{
+    text-align:center;
+    font-size:25px;
+    }
+    .btn{
+    height:40px;
+    width:150px;
+   padding:10px;
+   margin-top:10px;
+   margin-left:43px;
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+    h2{
+    text-align:center;
+    color:crimson;
+    }
+    input{
+        width:700px;
+       margin-bottom:30px;
+       border:4px solid dimgrey;
+       margin-left:200px;
+        }
+        p{
+        color:blue;
+        }
+
+    </style>
+</head>
+<body>
+<h2>DISPLAY YOUR PROFILE</h2>
+<div class="container">
+   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by topics">
+
+        <div class="row" id="myUL">
+
+       {% for i in a %}
+    <div class="col">
+      <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{i.fname}}</h5>
+    <h6 class="card-subtitle mb-2">{{i.lname}}</h6>
+    <p class="card-text">{{i.email}}</p>
+       <p class="card-text">{{i.phone}}</p>
+      <p class="card-text">{{i.loc}}</p>
+      <p class="card-text">{{i.fbook}}</p>
+       <p class="card-text">{{i.about}}</p>
+
+      <a href="http://127.0.0.1:8000/book_app/updatepro/{{i.id}}" class="btn btn-success"><b>UPDATE</b></a>
+      <a href="http://127.0.0.1:8000/book_app/detailpro/{{i.id}}" class="btn btn-primary"><b>DETAIL</b></a>
+      <a href="http://127.0.0.1:8000/book_app/del/{{i.id}}" class="btn btn-danger"><b>DELETE</b></a>
+
+
+  </div>
+</div>
+
+    </div>
+      {% endfor %}
+  </div>
+</div>
+
+
+</body>
+</html>

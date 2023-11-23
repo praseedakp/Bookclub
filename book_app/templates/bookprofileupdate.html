@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+   <script src="https://kit.fontawesome.com/a42570f4e1.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Book Profile Update</title>
+    <style>
+        body{
+    background-color:#f0f5f5;
+    }
+    h2{
+    text-align:center;
+    color:crimson;
+    }
+   .upd{
+    margin-top:10px;
+    margin-left:230px;
+    }
+    .form-control{
+    width:670px;
+    }
+    .btn{
+     width:670px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+    img{
+    height:200px;
+    width:200px;
+    }
+    </style>
+
+</head>
+<body>
+<h2>UPDATE YOUR BOOKS</h2>
+<div class="container">
+  <div class="upd">
+
+
+  <div class="row">
+    <div class="col">
+      <form method="post" enctype="multipart/form-data">{% csrf_token %}
+          <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">BOOKNAME</label>
+          <input type="text" name="bookna" value="{{a.bookna}}" class="form-control" id="exampleFormControlInput1">
+      </div>
+
+
+       <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">BOOKAUTHOR</label>
+          <input type="text" name="bookau" value="{{a.bookau}}" class="form-control" id="exampleFormControlInput1">
+      </div>
+
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">BOOKIMAGE</label>
+          <input type="file" name="bookimage" value="{{a.bookimage}}" class="form-control" id="exampleFormControlInput1">
+          <img src="{% static im %}">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">BOOKPDF</label>
+          <input type="file" name="bookpdf" value="{{a.bookpdf}}" class="form-control" id="exampleFormControlInput1">
+          <a href="{% static pdff %}">pdf</a>
+      </div>
+
+
+      <div class="d-grid gap-2">
+      <button class="btn btn-success" type="submit">UPDATE</button>
+
+      </div>
+
+      </form>
+
+
+    </div>
+
+  </div>
+  </div>
+</div>
+</body>
+</html>
